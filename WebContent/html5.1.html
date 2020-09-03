@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- EUC-KR : 2 byte 
+		 UTF-8 : 1 byte-->
+<meta charset="EUC-KR">
+<title>1204 웹페이지</title>
+
+	<script type="text/javascript">
+		function loginCheck(){
+			
+			
+			alert("난 loginCheck()함수");
+			//action= "/babyWeb/login.jsp"
+			window.document.loginForm.action="/babyWeb/login.jsp";
+			alert(window.document.loginForm.action);
+			window.document.loginForm.submit();
+			
+			/*window.document.Form[0].action="/babyWeb/login.jsp"; //태그이름을 배열로 가능
+			alert(window.document.Form[0].action);*/
+			
+			alert(document.getElementById("idVal")); //바디객체에서 form객체 등등 모든객체중 getElement("idVal")찾아가 : 막고 idVal 해보면 Obejct : HTTPinputElement 잘찾갔다고 나옴
+			alert(document.getElementById("idVal").vlaueddddfwgte); //오타나니까 undefined나왕 ->스펠고쳐라
+			var idVal = document.getElementById("idVal").vlue;
+			alert("idVal >>> : " + idVal);
+			var pwVal = document.getElementById("pwVal").vlue;
+			alert("pwVal >>> : " + pwVal); //뭐오류나도undefined 나옴 (어디서 오류나는지 안알려주니까 )
+				
+			
+			/*if (!document.getElementById("idVal").value){
+				alert " [아이디]를 입력하세요");
+				document.getElementByID("idVal").focus();
+				return;				
+			}
+			if (!document.getElementById("pwVal").value){
+				alert " [패스워드]]를 입력하세요");
+				document.getElementByID("pwVal").focus();
+				return;				
+			}*/
+			
+			
+			//#으로 경로 막을수있음 뒤는 안가
+			//document.loginForm.action="#/babyWeb/login.jsp";
+			//alert(document.loginForm.action);
+			//document.loginForm.submit();
+		}
+	</script>
+
+</head>
+<body>
+	<!-- 
+		form 태그는 클라이언트에서 서버로 전송하는 태그
+		html에서 서버에 데이터를 전송하는 태그는 form 태그 하나밖에 없다 
+	 -->
+	 <!-- http://localhost:8088/babyWeb/login.jsp -->
+	 <!-- http://localhost:8088/babyWeb/login.jsp?id=aa&pw=bb  -->
+	 
+   
+  <!-- 	<form action= "/babyWeb/login.jsp" method = "GET"> -->
+	<form name= "loginForm" method = "GET">
+		아이디 : <input type = "text" name = "id" id="idVal"> <br>
+		패스워드 : <input type = "text" name= "pw" pw = "pwVal" ><br>
+		<!--<input type= "submit" value = "SEND">--><!-- submit에는 보내는거까지 다 있음 -->
+		
+	 <!--	<input type = "button" value = "보내기" >
+		<input type = "reset" value = "다시" >  html 로 쓴거 -->
+		
+		<input type = "button" value = "보내기" onclick = "loginCheck()">
+		<input type = "reset" value = "다시" > <!-- 인라인스크립트(태그안에쓴거)  로 쓴거 -->	
+			
+	</form> 
+  		
+
+</body>
+</html>

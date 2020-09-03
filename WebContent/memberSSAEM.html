@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title> 회원 </title>
+		<script type="text/javascript">
+			
+			function checkAction(actionName){
+				
+				alert("checkAction 함수진입 >>> " + actionName);
+				
+				if('I' == actionName){						
+					document.memberForm.action="#/babyWeb/insertHbeMember.jsp";
+					alert(document.memberForm.action);
+				}
+				if('S' == actionName){
+					document.memberForm.action="#/babyWeb/selectHbeMember.jsp";	
+					alert(document.memberForm.action);
+				}
+				if('U' == actionName){
+					document.memberForm.action="#/babyWeb/updateHbeMember.jsp";
+					alert(document.memberForm.action);
+				}
+				if('D' == actionName){
+					document.memberForm.action="#/babyWeb/deleteHbeMember.jsp";
+					alert(document.memberForm.action);
+				}
+				
+				document.memberForm.submit();
+			}
+			
+		</script>
+	</head>
+	<body>
+		<form name="memberForm" method="GET">					
+			<table border="1" align="center">
+				<tr>
+					<td colspan="2" align="center">
+						회원정보
+					</td>
+				</tr>
+				<tr>
+					<td width="100" align="center">회원번호</td>
+					<td width="250">
+						&nbsp;<input type="text" name=hmem><br>
+						<font size="2">* 수정/삭제/조회 시 회원번호 사용</font>
+					</td>
+				</tr>
+				<tr>
+					<td align="center">한글이름</td>
+					<td>&nbsp;<input type="text" name="hname"></td>
+				</tr>
+				<tr>
+					<td align="center">영어이름</td>
+					<td>&nbsp;<input type="text" name="hename"></td>
+				</tr>
+				<tr>
+					<td align="center">닉네임(별칭)</td>
+					<td>&nbsp;<input type="text" name="haclice"></td>
+				</tr>
+				<tr>
+					<td align="center">아이디</td>
+					<td>&nbsp;<input type="text" name="hid"></td>
+				</tr>
+				<tr>
+					<td align="center">패스워드</td>
+					<td>&nbsp;<input type="text" name="hpw"></td>
+				</tr>
+				<tr>
+					<td align="center">성별</td>
+					<td>&nbsp;<input type="text" name="hgender"></td>
+				</tr>
+				<tr>
+					<td align="center">핸드폰</td>
+					<td>&nbsp;<input type="text" name="hhp"></td>
+				</tr>
+				<tr>
+					<td align="center">집전화</td>
+					<td>&nbsp;<input type="text" name="htel"></td>
+				</tr>
+				<tr>
+					<td align="center">생년월일</td>
+					<td>&nbsp;<input type="text" name="hbirth"></td>
+				</tr>
+				<tr>
+					<td align="center">이메일</td>
+					<td>&nbsp;<input type="text" name="hemail"></td>
+				</tr>
+				<tr>
+					<td align="center">우편번호</td>
+					<td>&nbsp;<input type="text" name="hpostno"></td>
+				</tr>
+				<tr>
+					<td align="center">주소</td>
+					<td>&nbsp;<input type="text" name="hjuso"></td>
+				</tr>
+				<tr>
+					<td align="center">삭제여부</td>
+					<td>&nbsp;<input type="text" name="hdeleteyn"></td>
+				</tr>
+				<tr>
+					<td align="center">등록일</td>
+					<td>&nbsp;<input type="text" name="hinsertdate"></td>
+				</tr>
+				<tr>
+					<td align="center">삭제일</td>
+					<td>&nbsp;<input type="text" name="hupdatedate"></td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center">
+						<input type="button" value="입력" onclick="checkAction('I');">
+						<input type="button" value="조회" onclick="checkAction('S');">
+						<input type="button" value="수정" onclick="checkAction('U');">
+						<input type="button" value="삭제" onclick="checkAction('D');">
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<input type="reset" value="다시">
+					</td>
+				</tr>			
+			</table>	
+			
+		</form>	
+	</body>
+</html>

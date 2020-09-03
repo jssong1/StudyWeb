@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- EUC-KR : 2 byte 
+		 UTF-8 : 1 byte-->
+<meta charset="EUC-KR">
+<title>첫 웹페이지</title>
+</head>
+<body>
+	<!-- 
+		form 태그는 클라이언트에서 서버로 전송하는 태그
+		html에서 서버에 데이터를 전송하는 태그는 form 태그 하나밖에 없다 
+	 -->
+	 <!-- http://localhost:8088/babyWeb/login.jsp -->
+	 <!-- http://localhost:8088/babyWeb/login.jsp?id=aa&pw=bb  -->
+	 
+   
+	<form action= "login.jsp" method = "GET">
+		아이디 : <input type = "text" name = "id"> <br>
+		패스워드 <input type = "text" name= "pw"><br>
+		<input type= "submit" value = "SEND">
+
+	</form> <!-- ----------실행됨 -->
+  		
+<!-- 	
+	<form action= "/login.jsp" method = "GET">
+		아이디 : <input type = "text" name = "id"> <br>
+		패스워드 <input type = "text" name= "pw"><br>
+		<input type= "submit" value = "SEND">
+	
+	</form>      --------------------------------에러남 404 -->
+<!--	
+	<form action= "babyWeb/login.jsp" method = "GET">
+		아이디 : <input type = "text" name = "id"> <br>
+		패스워드 <input type = "text" name= "pw"><br>
+		<input type= "submit" value = "SEND">
+		
+	</form>--------------------------------에러남 404 -->
+
+<!--	
+	<form action= "/babyWeb/login.jsp" method = "GET">
+		아이디 : <input type = "text" name = "id"> <br>
+		패스워드 <input type = "text" name= "pw"><br>
+		<input type= "submit" value = "SEND">
+		
+	</form>--------------------------------된다ㅏㄷ다ㅏ다 bitcamp-java142-babyWeb을 가리키는거 -->
+</body>
+</html>

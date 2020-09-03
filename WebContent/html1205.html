@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="EUC-KR">
+	<title>로그인 1205</title>
+	<script type="text/javascript">
+			
+			function loginCheck(){
+				alert("난 loginCheck() 함수 ");
+				
+				if (!document.getElementById("idVal").value){
+					alert("[아이디]를 입력하세요");
+					document.getElementById("idVal").focus();
+					return;
+				}
+				if (!document.getElementById("pwVal").value){
+					alert("[패스워드]를 입력하세요");
+					document.getElementById("pwVal").focus();
+					return;
+				}
+				
+				document.loginForm.action="/babyWeb/login.jsp";
+				alert(document.loginForm.action);
+				document.loginForm.submit();								
+			}		
+		</script>				
+	</head>
+	<body>
+		<form name="loginForm"  
+		      id="loginForm"
+		      method="GET">
+		    <table border="1" align="center">
+		    	<tr >
+		    		<td colspan="2" align="center"> 
+		    			로그인 
+		    		</td>
+		    	</tr>
+		    	<tr>
+		    		<td align="center"> 아이디 </td>
+		    		<td> 
+		    			<input type="text" name="id" id="idVal"> 
+		    		</td>
+		    	</tr>
+		    	<tr>
+		    		<td align="center"> 패스워드 </td>
+		    		<td> 
+		    			<input type="text" name="pw" id="pwVal"><br> 
+		    		</td>
+		    	</tr>
+		    	<tr>		    		
+		    		<td colspan="2" align="center"> 
+		    			<input type="button" value="보내기" onclick="loginCheck()">
+						<input type="reset" value="다시"> 
+		    		</td>
+		    	</tr>		    	
+		    </table>  
+			
+		</form>
+	</body>
+</html>

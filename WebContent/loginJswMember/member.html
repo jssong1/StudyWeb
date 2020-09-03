@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="EUC-KR">
+	<title>회원 정보</title>
+	
+		<script type= "text/javascript">
+			function checkAction(actionName){
+				
+			alert("checkAction 함수진입; action name >>> : " + actionName);
+				///babyWeb/selectAllJswMember.jsp
+				if('SA' == actionName){
+					document.memberForm.action = "/babyWeb/loginJswMember/selectAllJswMember.jsp";
+					alert(document.memberForm.action);
+				}
+					
+			
+				///babyWeb/insertJswMember.jsp
+				if('I' == actionName){
+					document.memberForm.action = "/babyWeb/loginJswMember/insertJswMember.jsp";
+					alert(document.memberForm.action);
+				}
+			
+				///babyWeb/selectAllJswMember.jsp
+				if('S' == actionName){
+					document.memberForm.action = "/babyWeb/loginJswMember/selectJswMember.jsp";
+					alert(document.memberForm.action);
+				}
+				
+				///babyWeb/UpdateJswMember.jsp
+				if('U' == actionName){
+					document.memberForm.action = "/babyWeb/loginJswMember/updateJswMember.jsp";
+					alert(document.memberForm.action);
+				}
+				
+				///babyWeb/deleteJswMember.jsp
+				if('D' == actionName){
+					document.memberForm.action = "/babyWeb/loginJswMember/deleteJswMember.jsp";
+					alert(document.memberForm.action);
+				}
+				document.memberForm.submit();
+			}		
+		</script>
+	</head>
+	<body>
+		<form name="memberForm" method="POST">
+		
+		회원정보 <br>
+		<input type = "button" value="전체 회원 조회" onclick="checkAction('SA');"><br>
+		회원번호 : <input type = text name="jmem"> <br>
+		; 수정/삭제/조회 시 회원번호 사용*<br>
+		* 한글이름 : <input type = text name="jkname"> <br>
+		* 닉네임(별칭) : <input type = text name="jalias"> <br>
+		* 아이디 : <input type = text name= "jid"> <br>
+		* 패스워드 : <input type = text name= "jpw"> <br>
+		* 성별 : <input type = text name="jgender"> <br>
+		* 휴대폰번호 : <input type = text name="jhp"> <br>
+		* 생년월일: <input type = text name= "jbirth"> <br>
+		* 이메일 : <input type = text name= "jemail"> <br>
+		* 우편번호 : <input type = text name= "jpost"> <br>
+		* 주소 : <input type = text name= "jaddr"> <br>
+		; 삭제여부 : <input type = text name="jdeleteyn"> <br>
+		; 등록일 : <input type = text name= "jinsertdate"> <br>
+		; 수정일 : <input type = text name= "jupdatedate"> <br>
+		
+		<input type = "button" value="입력" onclick="checkAction('I');">
+		<input type = "button" value="조회" onclick="checkAction('S');">
+		<input type = "button" value="수정" onclick="checkAction('U');">
+		<input type = "button" value="삭제" onclick="checkAction('D');">
+		&nbsp;&nbsp;
+		<input type = "reset" value = "다시" >
+		
+		
+		
+		</form>
+	
+	</body>
+</html>
